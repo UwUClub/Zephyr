@@ -81,7 +81,7 @@ class MySystemClass : public Engine::Core::System
 
         void update() override
         {
-            _world.get().query<Components...>().forEach(
+            _world.get().template query<Components...>().forEach(
                 _clock.getElapsedTime(), [this](Engine::Core::World & /*world*/, double /*deltaTime*/, std::size_t idx,
                                                 Components &...components) {
                     this->updateSystem(_world.get(), _clock.getElapsedTime(), idx, components...);

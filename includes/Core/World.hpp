@@ -56,8 +56,8 @@ namespace Engine::Core {
                             std::function<void(World &world, double deltaTime, std::size_t idx, Components &...)> func)
                     {
                         for (std::size_t idx = 0; idx < _world.get().getCurrentId(); idx++) {
-                            if (_world.get().hasComponents<Components...>(idx)) {
-                                func(_world.get(), deltaTime, idx, _world.get().getComponent<Components>().get(idx)...);
+                            if (_world.get().template hasComponents<Components...>(idx)) {
+                                func(_world.get(), deltaTime, idx, _world.get().template getComponent<Components>().get(idx)...);
                             }
                         }
                     }

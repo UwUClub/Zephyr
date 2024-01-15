@@ -20,7 +20,7 @@ namespace Engine::Core {
             void update() override
             {
                 double deltaTime = _clock.getElapsedTime();
-                _world.get().query<Components...>().forEach(deltaTime, _updateFunc);
+                _world.get().template query<Components...>().forEach(deltaTime, _updateFunc);
             }
 
         private:
