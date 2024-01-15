@@ -12,7 +12,7 @@ message(STATUS "Catch2_FOUND: ${Catch2_FOUND}")
 message(STATUS "spdlog_FOUND: ${spdlog_FOUND}")
 message(STATUS "Boost_FOUND: ${Boost_FOUND}")
 
-function(patatocs_setup_dependencies)
+function(zephyr_setup_dependencies)
 
     # For each dependency, see if it's
     # already been provided to us by a parent project

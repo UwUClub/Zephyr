@@ -1,4 +1,4 @@
-macro(patatocs_enable_ipo)
+macro(zephyr_enable_ipo)
   include(CheckIPOSupported)
   check_ipo_supported(RESULT result OUTPUT output)
   if(result)

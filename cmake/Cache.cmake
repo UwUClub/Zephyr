@@ -1,5 +1,5 @@
 # Enable cache if available
-function(patatocs_enable_cache)
+function(zephyr_enable_cache)
   set(CACHE_OPTION
       "ccache"
       CACHE STRING "Compiler cache to be used")

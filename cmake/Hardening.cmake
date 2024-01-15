@@ -1,7 +1,7 @@
 include(CheckCXXCompilerFlag)
 
 macro(
-  patatocs_enable_hardening
+  zephyr_enable_hardening
   target
   global
   ubsan_minimal_runtime)
