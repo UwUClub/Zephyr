@@ -18,7 +18,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Set the project name and language
 project(
-  patatocs
+  zephyr
   VERSION 0.0.1
   DESCRIPTION ""
   HOMEPAGE_URL "%%myurl%%"
@@ -27,13 +27,13 @@ project(
 include(cmake/PreventInSourceBuilds.cmake)
 include(ProjectOptions.cmake)
 
-patatocs_setup_options()
+zephyr_setup_options()
 
-patatocs_global_options()
+zephyr_global_options()
 include(Dependencies.cmake)
-patatocs_setup_dependencies()
+zephyr_setup_dependencies()
 
-patatocs_local_options()
+zephyr_local_options()
 
 # don't know if this should be set globally from here or not...
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
@@ -47,18 +47,18 @@ string(
             8
             GIT_SHORT_SHA)
 
-target_compile_features(patatocs_options INTERFACE cxx_std_${CMAKE_CXX_STANDARD})
+target_compile_features(zephyr_options INTERFACE cxx_std_${CMAKE_CXX_STANDARD})
 
-add_library(patatocs::patatocs_options ALIAS patatocs_options)
-add_library(patatocs::patatocs_warnings ALIAS patatocs_warnings)
+add_library(zephyr::zephyr_options ALIAS zephyr_options)
+add_library(zephyr::zephyr_warnings ALIAS zephyr_warnings)
 
 # configure files based on CMake configuration options
 
 add_library(${PROJECT_NAME})
 
 target_link_libraries(${PROJECT_NAME}
-        PUBLIC patatocs::patatocs_options
-            patatocs::patatocs_warnings
+        PUBLIC zephyr::zephyr_options
+            zephyr::zephyr_warnings
         )
 
 set_target_properties(${PROJECT_NAME}
@@ -103,11 +103,11 @@ endif()
 
 # Add other targets that you want installed here, by default we just package the one executable
 # we know we want to ship
-# patatocs_package_project(
+# zephyr_package_project(
 #   TARGETS
-#         patatocs
-#   patatocs_options
-#   patatocs_warnings
+#         zephyr
+#   zephyr_options
+#   zephyr_warnings
   # FIXME: this does not work! CK
   # PRIVATE_DEPENDENCIES_CONFIGURED project_options project_warnings
 # )
