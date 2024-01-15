@@ -9,9 +9,9 @@ set(CMAKE_CXX_FLAGS " ${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
 if(PROJECT_IS_TOP_LEVEL OR TEST_INSTALLED_VERSION)
   enable_testing()
 
-  find_package(patatocs CONFIG REQUIRED) # for intro, project_options, ...
+  find_package(zephyr CONFIG REQUIRED) # for intro, project_options, ...
 
-  if(NOT TARGET patatocs_options)
+  if(NOT TARGET zephyr_options)
     message(FATAL_ERROR "Requiered config package not found!")
     return() # be strictly paranoid for Template Janitor github action! CK
   endif()
@@ -31,10 +31,10 @@ add_executable(tests
 
 target_link_libraries(
   tests
-  PRIVATE patatocs::patatocs_warnings
-          patatocs::patatocs_options
+  PRIVATE zephyr::zephyr_warnings
+          zephyr::zephyr_options
           Catch2::Catch2WithMain
-          patatocs
+          zephyr
           )
 
 if(WIN32 AND BUILD_SHARED_LIBS)

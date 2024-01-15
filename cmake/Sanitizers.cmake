@@ -1,5 +1,5 @@
 function(
-  patatocs_enable_sanitizers
+  zephyr_enable_sanitizers
   project_name
   ENABLE_SANITIZER_ADDRESS
   ENABLE_SANITIZER_LEAK

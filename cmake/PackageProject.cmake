@@ -1,7 +1,7 @@
 # Uses ycm (permissive BSD-3-Clause license) and ForwardArguments (permissive MIT license)
 cmake_policy(SET CMP0135 NEW)
 
-function(patatocs_package_project)
+function(zephyr_package_project)
   cmake_policy(SET CMP0103 NEW) # disallow multiple calls with the same NAME
 
   set(_options ARCH_INDEPENDENT # default to false

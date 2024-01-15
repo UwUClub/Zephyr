@@ -1,4 +1,4 @@
-macro(patatocs_configure_linker project_name)
+macro(zephyr_configure_linker project_name)
   include(CheckCXXCompilerFlag)
 
   set(USER_LINKER_OPTION

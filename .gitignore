@@ -5,8 +5,8 @@ cmake-build-*/
 conan-cache/
 CMakeCache.txt
 .cache
-libpatat*
-patat*
+libzephyr*
+zephyr*
 log.txt
 *gcno
 tests
