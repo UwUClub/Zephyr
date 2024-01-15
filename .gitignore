@@ -10,6 +10,7 @@ zephyr*
 log.txt
 *gcno
 tests
+.a
 
 # User spesific settings
 CMakeUserPresets.json
